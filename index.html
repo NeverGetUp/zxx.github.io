@@ -86,10 +86,20 @@
         <p class="desc">记录生活、技术与思考</p>
 
         <!-- 改成 Hermes 安装教程 + 点击跳转 -->
-        <div class="article" onclick="location.href='hermes.html'">
+        <div class="article" id="hermesArticle">
             <h2>Hermes 安装教程</h2>
             <p>Windows 平台 Hermes Agent 完整安装配置图文教程，含Git环境、安装命令、模型API配置全过程。</p>
             <div class="time">2025-06-01</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hermesArticle = document.getElementById('hermesArticle');
+    if (hermesArticle) {
+        hermesArticle.addEventListener('click', function() {
+            location.href = 'hermes.html';
+        });
+    }
+});
+</script>
         </div>
 
         <div class="article">
