@@ -1,7 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 动态渐变背景核心代码 */
+        body {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #2c3e50, #8e44ad, #3498db, #e74c3c);
+            background-size: 400% 400%;
+            animation: bgGradient 15s ease infinite;
+            color: white;
+            padding: 20px;
+        }
+
+        /* 背景动画 */
+        @keyframes bgGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 页面容器 */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        /* 标题 */
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .desc {
+            text-align: center;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* 文章列表 */
+        .article {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .article h2 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .article p {
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        .article .time {
+            font-size: 12px;
+            opacity: 0.6;
+            margin-top: 6px;
+        }
+    </style>
+</head>
 <body>
-  <h1>我的第一个博客</h1>
-  <p>Hello, GitHub Pages!</p>
+    <div class="container">
+        <h1>我的个人博客</h1>
+        <p class="desc">记录生活、技术与思考</p>
+
+        <div class="article">
+            <h2>博客第一篇：开始写作</h2>
+            <p>今天终于搭建好了自己的博客，未来会在这里分享学习笔记、生活感悟和技术心得。</p>
+            <div class="time">2025-06-01</div>
+        </div>
+
+        <div class="article">
+            <h2>GitHub Pages 搭建教程</h2>
+            <p>无需服务器、无需域名，直接用 GitHub 就能免费拥有一个属于自己的网站。</p>
+            <div class="time">2025-06-01</div>
+        </div>
+
+        <div class="article">
+            <h2>动态背景实现原理</h2>
+            <p>使用 CSS 渐变 + 动画，实现流动的彩色背景，不需要任何图片和插件。</p>
+            <div class="time">2025-06-01</div>
+        </div>
+    </div>
 </body>
 </html>
