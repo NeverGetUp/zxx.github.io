@@ -12,7 +12,6 @@
             font-family: "Microsoft YaHei", sans-serif;
         }
 
-        /* 动态渐变背景核心代码 */
         body {
             min-height: 100vh;
             background: linear-gradient(45deg, #2c3e50, #8e44ad, #3498db, #e74c3c);
@@ -22,14 +21,12 @@
             padding: 20px;
         }
 
-        /* 背景动画 */
         @keyframes bgGradient {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* 页面容器 */
         .container {
             max-width: 800px;
             margin: 50px auto;
@@ -40,7 +37,6 @@
             box-shadow: 0 8px 32px rgba(0,0,0,0.2);
         }
 
-        /* 标题 */
         h1 {
             font-size: 36px;
             margin-bottom: 10px;
@@ -53,11 +49,18 @@
             opacity: 0.9;
         }
 
-        /* 文章列表 */
         .article {
             margin-bottom: 24px;
             padding-bottom: 16px;
             border-bottom: 1px solid rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            padding: 12px;
+            border-radius: 10px;
+        }
+        .article:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
         }
 
         .article h2 {
@@ -82,9 +85,10 @@
         <h1>我的个人博客</h1>
         <p class="desc">记录生活、技术与思考</p>
 
-        <div class="article">
-            <h2>博客第一篇：开始写作</h2>
-            <p>今天终于搭建好了自己的博客，未来会在这里分享学习笔记、生活感悟和技术心得。</p>
+        <!-- 改成 Hermes 安装教程 + 点击跳转 -->
+        <div class="article" onclick="location.href='hermes.html'">
+            <h2>Hermes 安装教程</h2>
+            <p>Windows 平台 Hermes Agent 完整安装配置图文教程，含Git环境、安装命令、模型API配置全过程。</p>
             <div class="time">2025-06-01</div>
         </div>
 
