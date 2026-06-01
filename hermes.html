@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermes 安装教程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
 
+        body {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #2c3e50, #8e44ad, #3498db, #e74c3c);
+            background-size: 400% 400%;
+            animation: bgGradient 15s ease infinite;
+            color: #fff;
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        @keyframes bgGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: rgba(0,0,0,0.35);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        a.back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #74b9ff;
+            text-decoration: none;
+        }
+        a.back:hover { text-decoration: underline; }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+        h2 {
+            margin: 25px 0 15px;
+            font-size: 22px;
+            border-left: 4px solid #74b9ff;
+            padding-left: 12px;
+        }
+        p {
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+        .tip {
+            background: rgba(255,255,255,0.1);
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        code {
+            background: rgba(0,0,0,0.4);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: Consolas;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back">← 返回博客首页</a>
+        <h1>Hermes Agent 安装教程</h1>
+        <p>Windows 平台完整安装指南</p>
+        <p>本教程将指导您完成 Hermes Agent 在 Windows 系统上的完整安装流程，包括 Git 环境配置、安装命令执行以及模型配置等步骤。</p>
+
+        <h2>一、安装 Git 环境</h2>
+        <p>安装 Git 是使用 Hermes Agent 的必要前提，系统需要 Git 环境来管理代码与依赖。</p>
+
+        <p><strong>步骤 1：下载 Git</strong></p>
+        <p>访问 Git 官方网站下载安装程序：<br>
+        URL：https://git-scm.com/?hl=zh-cn</p>
+
+        <p><strong>步骤 2：安装 Git</strong></p>
+        <p>安装过程采用「傻瓜式」操作，连续点击「下一步」即可，直至安装完成。</p>
+        <div class="tip">建议保持默认安装路径和选项，无需额外修改。</div>
+
+        <p><strong>步骤 3：验证安装</strong></p>
+        <p>打开 PowerShell，输入以下命令查看 Git 版本信息：</p>
+        <p><code>git --version</code></p>
+        <p>若出现版本号信息，则说明 Git 安装成功。</p>
+
+        <h2>二、安装 Hermes Agent</h2>
+        <div class="tip">⚠ AI 需要修改系统级文件内容，普通用户权限不足，Windows 会直接拒绝写入 / 注册操作。请务必以管理员身份运行终端！</div>
+
+        <p><strong>步骤 1：以管理员身份打开 PowerShell</strong></p>
+        <p>在 Windows 搜索框中输入「PowerShell」，右键选择「以管理员身份运行」。</p>
+        <p>❌ 安装脚本 irm 是 PowerShell 的独有命令，不可在 CMD 命令提示符中使用。</p>
+
+        <p><strong>步骤 2：执行安装命令</strong></p>
+        <p>在 PowerShell 终端中输入以下命令并回车：</p>
+        <p><code>irm https://res1.hermesagent.org.cn/install.ps1 | iex</code></p>
+        <p>由于境外网络下载文件容易超时，安装程序默认使用国内镜像加速。</p>
+        <p>首次安装通常需要下载约2030MB，请耐心等待，不要关闭当前窗口。</p>
+
+        <p><strong>步骤 3：进入配置界面</strong></p>
+        <p>看到配置界面时，说明已成功进入配置环节，按照向导下一步操作即可。</p>
+
+        <h2>三、模型配置</h2>
+        <p><strong>步骤 1：选择安装模式</strong></p>
+        <p>在配置界面输入 <code>1</code>，1 是快速安装模式，然后按回车键确认。</p>
+
+        <p><strong>步骤 2：选择模型</strong></p>
+        <p>以选择 DeepSeek 为例：配置界面输入 <code>14</code> 然后回车。</p>
+
+        <p><strong>步骤 3：填写 API 密钥与地址</strong></p>
+        <p>接下来需要填写自己所选模型的 API 密钥及接口地址。</p>
+        <div class="tip">⚠ 密钥输入时不会显示任何字符（出于安全考虑），粘贴后直接回车即可。</div>
+        <p>以 DeepSeek 为例，API 地址：<code>https://api.deepseek.com/v1</code></p>
+        <p>API 密钥可通过 DeepSeek 开放平台获取：https://platform.deepseek.com</p>
+
+        <p><strong>步骤 4：选择模型环节</strong></p>
+        <p>可按需选择 deepseek-chat、deepseek-reasoner 等模型版本。</p>
+
+        <p><strong>步骤 5：模型详细配置</strong></p>
+        <p>进入消息平台绑定环节，可输入 <code>2</code> 先跳过，后续可通过对话面板配置。</p>
+
+        <h2>四、完成安装</h2>
+        <p>1. 看到安装成功提示，代表 Hermes Agent 安装完成。</p>
+        <p>2. 关闭当前 PowerShell 窗口，重新打开终端使配置生效。</p>
+        <p>3. 启动命令：<code>hermes</code></p>
+        <p>首次启动可能需要一些时间进行初始化，请耐心等待。</p>
+
+        <h2>五、常见问题</h2>
+        <p><strong>Q: 安装过程中提示权限不足？</strong><br>
+        A: 请确保以管理员身份运行 PowerShell，右键选择「以管理员身份运行」。</p>
+
+        <p><strong>Q: 下载速度慢或超时？</strong><br>
+        A: 安装脚本默认使用国内镜像，若仍有问题请检查网络连接。</p>
+
+        <p><strong>Q: 如何获取 DeepSeek API 密钥？</strong><br>
+        A: 访问 https://platform.deepseek.com 注册并创建 API Key。</p>
+
+        <p style="text-align:center;margin-top:40px;opacity:0.7;">—— Hermes Agent 安装教程 · 完 ——</p>
+    </div>
+</body>
+</html>
